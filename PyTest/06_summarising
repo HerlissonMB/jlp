@@ -1,0 +1,14 @@
+import pandas as pd
+
+dados = pd.read_csv("C:/Users/Herlisson/Documents/Curso de Machine Learning/3. Pandas/copacabana.csv",
+                    delimiter=";")
+
+print(dados.columns)
+#print(dados.head(5))
+
+#print(dados.tail(6))
+dados['Quartos'].describe()
+
+print(dados['Quartos'] > 5) #Retorna um vetor booleano
+
+print(dados.loc[dados['Quartos'] > 5])
