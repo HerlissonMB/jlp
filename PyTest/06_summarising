@@ -3,12 +3,32 @@ import pandas as pd
 dados = pd.read_csv("C:/Users/Herlisson/Documents/Curso de Machine Learning/3. Pandas/copacabana.csv",
                     delimiter=";")
 
-print(dados.columns)
+#print(dados.columns)
 #print(dados.head(5))
 
 #print(dados.tail(6))
-dados['Quartos'].describe()
+print( dados['Quartos'].describe() )
 
-print(dados['Quartos'] > 5) #Retorna um vetor booleano
+#print(dados['Quartos'] > 5) #Retorna um vetor booleano
 
-print(dados.loc[dados['Quartos'] > 5])
+print(dados.loc[dados['Quartos'] > 5]) #Retorna as linhas de dados cuja quantidade de quartos e maior que 5 no dataset dados
+
+dados['TOTAL']= dados['VAL_UNIT']*dados['AreaConstruida'] #Criando a coluna Total que e a mult de Val Unit e 
+
+#Importando a biblioteca pydataset
+import pydataset
+
+titanic = pydataset.data('titanic') #Importando o arq de dados Titanic
+
+print('\n')
+print(titanic.columns)
+print('\n Tamanho antes da conversao: ', titanic['class'].nbytes)
+
+titanic['class']=titanic['class'].astype('category') #Transforma os dados em Categoricos
+
+print('\n Tamanho apos a conversao: ', titanic['class'].nbytes)
+
+print( titanic.describe() )
+
+print('\n\n', titanic['class'].drop_duplicates() )
+
