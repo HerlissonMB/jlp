@@ -13,7 +13,7 @@ print( dados['Quartos'].describe() )
 
 print(dados.loc[dados['Quartos'] > 5]) #Retorna as linhas de dados cuja quantidade de quartos e maior que 5 no dataset dados
 
-dados['TOTAL']= dados['VAL_UNIT']*dados['AreaConstruida'] #Criando a coluna Total que e a mult de Val Unit e 
+dados['TOTAL']= dados['VAL_UNIT'] * dados['AreaConstruida'] #Criando a coluna Total que e a mult de Val Unit e 
 
 #Importando a biblioteca pydataset
 import pydataset
